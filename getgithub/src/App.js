@@ -1,37 +1,71 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
-  const [username, SetUsername] = useState('');
-  
+  const [username, setUsername] = useState('');
+  const [resData, setResData] = useState('');
+
   const handleUsernameInput = (event) => {
-    SetUsername(event.target.value);
+    setUsername(event.target.value);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(username);
-    SetUsername('');
-  
-    const pron = fetch('https://api.github.com/users/' + username)
-    .then(response => response.json());
-    .then(data => console.table(data));
-  
+    
+    // methods of fetching the data
+    // XMLHttpRequest
+    // fetch
+    // axios
+    // async await
+    fetch('https://api.github.com/users/' + username)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setResData(data);
+    });
+    
+    setUsername('');
   }
-
 
 
 
   return (
     <>
-    <div>
-      <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleUsernameInput}/>
-      <button>Search</button>
-      </form>
-    </div>
+      <div className='container'>
+        <form onSubmit={handleSubmit} className='formCard'>
+          <input type="text" onChange={handleUsernameInput} value={username}/>
+          <button>Submit</button>
+        </form>
+
+        {resData.message}
+
+        {/* conditional rendering */}
+        { resData && (resData.message !== 'Not Found') && (
+            <div className='userDetailCard'>
+              <div className='userDetailBody'>
+                <p className='name'>{resData.name}</p>
+                <em className='username'>{resData.login}</em>
+                <div className='follow'>
+                  <p>Followers : {resData.followers}</p>
+                  <p>Following : {resData.following}</p>
+                </div>
+                <div className='profDetail'>
+                  <p>🏢 {resData.company}</p>
+                  <p>🗒️ {resData.bio}</p>
+
+                </div>
+              </div>
+              <div className='userImage'>
+                <img src={resData.avatar_url} alt="avatar" />
+              </div>
+            </div>
+          )
+        }
+
+      </div>
     </>
   );
 }
