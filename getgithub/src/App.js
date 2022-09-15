@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import logo from './logo.svg';
 import './App.css';
 
 
@@ -43,7 +43,7 @@ function App() {
         {resData.message}
 
         {/* conditional rendering */}
-        { resData && (resData.message !== 'Not Found') && (
+        { resData && (resData.message != 'Not Found') && (
             <div className='userDetailCard'>
               <div className='userDetailBody'>
                 <p className='name'>{resData.name}</p>
