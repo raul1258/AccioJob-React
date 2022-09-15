@@ -13,7 +13,17 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(username);
+    SetUsername('');
+  
+    const pron = fetch('https://api.github.com/users/' + username)
+    .then(response => response.json());
+    .then(data => console.table(data));
+  
   }
+
+
+
+
   return (
     <>
     <div>
