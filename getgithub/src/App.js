@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 
@@ -43,11 +43,17 @@ function App() {
         {resData.message}
 
         {/* conditional rendering */}
-        { resData && (resData.message != 'Not Found') && (
+        { resData && (resData.message !== 'Not Found') && (
             <div className='userDetailCard'>
+              <div className='userImage'>
+                <img src={resData.avatar_url} alt="avatar" />
+              </div>
               <div className='userDetailBody'>
-                <p className='name'>{resData.name}</p>
-                <em className='username'>{resData.login}</em>
+                <p className='name'>Name:{resData.name}</p>
+                <p className='username'>UserName : {resData.login}</p>
+                <p className='username'>{resData.location}</p>
+                <p className='username'>No.of Repos : {resData.public_repos}</p>
+
                 <div className='follow'>
                   <p>Followers : {resData.followers}</p>
                   <p>Following : {resData.following}</p>
@@ -58,9 +64,7 @@ function App() {
 
                 </div>
               </div>
-              <div className='userImage'>
-                <img src={resData.avatar_url} alt="avatar" />
-              </div>
+              
             </div>
           )
         }
