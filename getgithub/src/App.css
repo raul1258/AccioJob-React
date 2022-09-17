@@ -31,8 +31,8 @@
 }
 .formCard input{
   background-color: transparent;
-  border: 1px solid rgba(255,255,255,.6);
-  background-color: rgba(255,255,255,.1);
+  border: 1px solid rgba(60, 58, 58, 0.6);
+  background-color: rgba(186, 171, 171, 0.1);
   outline: none;
   border-radius: 5px;
   padding: 10px;
