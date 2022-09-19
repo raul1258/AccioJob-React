@@ -20,8 +20,8 @@ function App() {
     
     <Header />
 
-    
-    <Router>
+
+    {/* <Router>
       <Link to ="/">Home</Link>
       <Link to ="/about">About</Link>
       <Link to ="/contact">Contact</Link>
@@ -42,7 +42,7 @@ function App() {
           
       </Switch>
      
-    </Router>
+    </Router> */}
 
     <Footer/>
     </>
