@@ -1,8 +1,8 @@
 import React from 'react'
 import './Footer.css'
-import {ReactComponent as Facebook} from '../UI/icons/facebook.svg'
-import {ReactComponent as Twitter} from '../UI/icons/twitter.svg'
-import {ReactComponent as Instagram} from '../UI/icons/instagram.svg'
+// import {ReactComponent as Facebook} from '../UI/icons/facebook.svg'
+// import {ReactComponent as Twitter} from '../UI/icons/twitter.svg'
+// import {ReactComponent as Instagram} from '../UI/icons/instagram.svg'
 
 function Footer() {
   return (
@@ -55,16 +55,16 @@ function Footer() {
             <p className='footer-section-column-head follow-us-container'>
               FOLLOW US ON SOCIAL MEDIA
             </p>
-            <div className='social-icons'>
+            {/* <div className='social-icons'>
               <Facebook width='20px' />
               <Twitter width='20px' />
               <Instagram width='20px' />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
       <div className='footer-bottom'>
-        Made with ❤️ by Om 
+        Made with ❤️ by Rahul 
       </div>
 
     </div>
