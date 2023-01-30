@@ -22,7 +22,7 @@ const todoListContainer = {
     borderRadius: '10px',
     width: '600px',
     boxShadow: '0 0 10px 0 rgba(255,255,255,.5)',
-    background: 'linear-gradient(135deg, #14fc25, #ffeb3b, #ff00e0)',
+    background: 'linear-gradient(120deg, #14fc25, #ffeb3b, #ff00e0)',
 }
 
 function App() {
